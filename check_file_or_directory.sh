@@ -3,10 +3,17 @@
 ##check that given path is of file or folder :
 
 read -p "Enter path : " path
-first=$(ls -ld $path | grep -o "^\w") 
-if [[  "$first" == "d" ]] 
+
+if [[ -f "$path" ]]
 then
-    echo -e "\nIt is a Directory"
+	echo "It is a File"
 else
-    echo -e "\nIt is a File "
+	echo "It is a Directory"
 fi
+
+#if [[ -d "$path" ]]
+#then
+#	echo "It is a Directory"
+#else
+#	echo "It is a File"
+#fi
